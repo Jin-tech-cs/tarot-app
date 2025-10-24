@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타로 리딩 앱</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50 h-screen flex flex-col">
+
+    <!-- 헤더 -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-gray-200 flex-shrink-0 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-1 flex justify-between items-center">
+            
+            <!-- 왼쪽 빈 공간 (균형 맞추기) -->
+            <div class="w-32"></div>
+            
+            <!-- 로고 + 제목 (클릭하면 홈으로) -->
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition">
+                <img src="{{ url_for('static', filename='images/name1.png') }}"
+                     alt="타로 리딩 로고" 
+                     class="w-24 h-24 object-contain -my-4">
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    
+                </h1>
+            </a>
+            
+            <!-- 네비게이션 -->
+            <nav class="flex gap-6">
+                <a href="/" class="nav-link text-gray-600 hover:text-purple-600 transition-colors text-sm">Home</a>
+                <a href="/guide" class="nav-link text-gray-600 hover:text-purple-600 transition-colors text-sm">Archive</a>
+            </nav>
+        
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 영역 (나머지 공간 전부 사용) -->
+    <main class="flex-1 -hidden flex items-center justify-center p-4 sm:p-6 md:p-8">
+        <div class="w-full h-full max-w-7xl flex items-center justify-center">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

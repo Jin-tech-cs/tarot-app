@@ -1,0 +1,55 @@
+<!-- 가로 나열 스프레드 레이아웃 코드
+<div class="flex flex-wrap justify-center gap-8">
+    {% for card in cards %}
+    // 여기서 부터, card.html로 대체 가능
+    <div class="text-center">
+        <div class="tarot-card w-40 h-60 bg-white rounded-2xl shadow-2xl p-4 flex flex-col border-4 border-gray-200 {{ 'rotate-180' if card.is_reversed else '' }}">
+            <div class="flex justify-between items-start mb-2">
+                <div class="text-xs font-bold bg-gradient-to-r {{ suit_colors[card.suit] }} bg-clip-text text-transparent">
+                    {{ card.get('number', card.suit.upper()) }}
+                </div>
+                {% if card.is_reversed %}
+                <div class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">역</div>
+                {% endif %}
+            </div>
+            <div class="flex-1 flex items-center justify-center">
+                <div class="text-6xl bg-gradient-to-br {{ suit_colors[card.suit] }} p-4 rounded-xl">
+                    {% if card.suit == 'major' %}⭐
+                    {% elif card.suit == 'wands' %}🔥
+                    {% elif card.suit == 'cups' %}💧
+                    {% elif card.suit == 'swords' %}⚔️
+                    {% elif card.suit == 'pentacles' %}🌟
+                    {% endif %}
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <div class="font-bold text-sm bg-gradient-to-r {{ suit_colors[card.suit] }} bg-clip-text text-transparent">
+                    {{ card.name }}
+                </div>
+                <div class="text-xs text-gray-500 mt-1">{{ card.nameEn }}</div>
+            </div>
+        </div>
+        <p class="text-sm text-gray-600 mt-3 font-medium">{{ positions[loop.index0] }}</p>
+    </div>
+    {% endfor %}
+</div>
+-->
+
+<div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+    {% for card in cards %}
+    <div class="text-center">
+        {% include 'components/card.html' %}
+        <p class="text-[0.5rem] sm:text-xs text-center mt-1">{{ positions[loop.index0] }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+
+<!-- 핵심 구조: 
+
+body (h-screen overflow-hidden flex flex-col)
+  ├── header (flex-shrink-0)
+  └── main (flex-1)
+        └── content (중앙 정렬 + 여백)
+
+-->

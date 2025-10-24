@@ -1,0 +1,34 @@
+<!-- 십자가 레이아웃 (5카드) -->
+<div class="relative max-w-3xl mx-auto">
+    <div class="grid grid-cols-3 gap-8">
+        <!-- 상단 (카드 1) -->
+        <div class="col-start-2 row-start-1 flex justify-center">
+            {% set card = cards[0] %}
+            {% include 'components/card.html' %}
+        </div>
+        
+        <!-- 왼쪽 (카드 2) -->
+        <div class="col-start-1 row-start-2 flex justify-center">
+            {% set card = cards[1] %}
+            {% include 'components/card.html' %}
+        </div>
+        
+        <!-- 중앙 (카드 3) -->
+        <div class="col-start-2 row-start-2 flex justify-center">
+            {% set card = cards[2] %}
+            {% include 'components/card.html' %}
+        </div>
+        
+        <!-- 오른쪽 (카드 4) -->
+        <div class="col-start-3 row-start-2 flex justify-center">
+            {% set card = cards[3] %}
+            {% include 'components/card.html' %}
+        </div>
+        
+        <!-- 하단 (카드 5) -->
+        <div class="col-start-2 row-start-3 flex justify-center">
+            {% set card = cards[4] %}
+            {% include 'components/card.html' %}
+        </div>
+    </div>
+</div>

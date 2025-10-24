@@ -1,0 +1,195 @@
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardFlip {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* 기본 애니메이션 클래스 */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 스프레드 카드 호버 효과 */
+.spread-card {
+    transition: all 0.3s ease;
+}
+
+.spread-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(147, 51, 234, 0.2);
+}
+
+/* 타로 카드 스타일 */
+.tarot-card {
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.tarot-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* 역방향 회전 */
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.tarot-card.rotate-180:hover {
+    transform: rotate(180deg) translateY(-15px) scale(1.05);
+}
+
+/* 카드 도감 호버 효과 */
+.card-guide {
+    transition: all 0.3s ease;
+}
+
+.card-guide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(147, 51, 234, 0.15);
+    cursor: pointer;
+}
+
+/* 네비게이션 링크 */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #9333ea, #ec4899);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* 그라데이션 텍스트 */
+.gradient-text {
+    background: linear-gradient(to right, #9333ea, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 버튼 효과 */
+button, a[class*="bg-gradient"] {
+    position: relative;
+    overflow: hidden;
+}
+
+button::before, a[class*="bg-gradient"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+button:hover::before, a[class*="bg-gradient"]:hover::before {
+    left: 100%;
+}
+
+/* 로딩 애니메이션 */
+.loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(147, 51, 234, 0.3);
+    border-radius: 50%;
+    border-top-color: #9333ea;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .tarot-card {
+        width: 120px;
+        height: 180px;
+    }
+    
+    .spread-card {
+        padding: 1.5rem;
+    }
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #9333ea, #ec4899);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #7e22ce, #db2777);
+}
+
+/* 카드 반짝임 효과 */
+.card-shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}

@@ -1,0 +1,58 @@
+
+<!-- 그리드 컨테이너 -->
+<div class="grid grid-cols-7 gap-1 sm:gap-2 w-full max-w-7xl mx-auto">
+    
+    <!-- 5. 위 -->
+    <div class="col-start-3 row-start-1 flex flex-col items-center justify-end">
+        {% set card = cards[4] %}
+        {% include 'components/card.html' %}
+        <p class="text-[0.5rem] sm:text-xs text-center mt-1">{{ positions[4] }}</p>
+    </div>
+    
+    <!-- 3. 과거 (왼쪽) -->
+    <div class="col-start-1 row-start-2 flex flex-col items-center justify-center">
+        {% set card = cards[2] %}
+        {% include 'components/card.html' %}
+        <p class="text-[0.5rem] sm:text-xs text-center mt-1">{{ positions[2] }}</p>
+    </div>
+    
+    <!-- 1. 현재 (중앙) -->
+    <div class="col-start-3 row-start-2 relative flex flex-col items-center justify-center">
+        {% set card = cards[0] %}
+        {% include 'components/card.html' %}
+        
+        <!-- 2. 도전 (현재 위에 가로로) -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90 z-10">
+            {% set card = cards[1] %}
+            {% include 'components/card.html' %}
+        </div>
+        
+        <p class="text-[0.5rem] sm:text-xs text-center mt-1 relative z-20">{{ positions[0] }}</p>
+    </div>
+    
+    <!-- 4. 미래 (오른쪽) -->
+    <div class="col-start-5 row-start-2 flex flex-col items-center justify-center">
+        {% set card = cards[3] %}
+        {% include 'components/card.html' %}
+        <p class="text-[0.5rem] sm:text-xs text-center mt-1">{{ positions[3] }}</p>
+    </div>
+    
+    <!-- 오른쪽 세로줄 (7-10) -->
+    <div class="col-start-7 row-start-1 row-span-3 flex flex-col gap-1 items-center justify-center">
+        {% for i in range(6, 10) %}
+        <div class="flex flex-col items-center">
+            {% set card = cards[i] %}
+            {% include 'components/card.html' %}
+            <p class="text-[0.5rem] sm:text-xs text-center mt-1">{{ positions[i] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <!-- 6. 아래 -->
+    <div class="col-start-3 row-start-3 flex flex-col items-center justify-start">
+        {% set card = cards[5] %}
+        {% include 'components/card.html' %}
+        <p class="text-[0.5rem] sm:text-xs text-center mt-1">{{ positions[5] }}</p>
+    </div>
+    
+</div>

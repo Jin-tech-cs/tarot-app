@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="space-y-12 animate-fade-in">
+    <div class="text-center">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">스프레드를 선택하세요</h2>
+        <p class="text-gray-600">당신의 질문에 맞는 리딩 방식을 선택하세요</p>
+    </div>
+    
+    <!-- 카드 스프레드 --> 
+    <!-- 추가를 위해 수정 필요 부분 : 여기(home.html), data.py -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- 원 카드 -->
+        <div class="spread-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+            <div class="flex items-start justify-between mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">원 카드</h3>
+                    <p class="text-gray-600 mb-1">오늘의 메시지</p>
+                    <p class="text-sm text-gray-400">1장의 카드</p>
+                </div>
+                <span class="text-3xl">✨</span>
+            </div>
+            <a href="/draw?spread=one" class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl transition-all font-medium shadow-lg text-center">
+                카드 뽑기
+            </a>
+        </div>
+
+        <!-- 투 카드 -->
+        <div class="spread-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+            <div class="flex items-start justify-between mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">투 카드</h3>
+                    <p class="text-gray-600 mb-1">현재-미래</p>  
+                    <p class="text-sm text-gray-400">2장의 카드</p>             
+                </div>
+                <span class="text-3xl">✨</span>
+            </div>
+            <a href="/draw?spread=two" class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl transition-all font-medium shadow-lg text-center">
+                카드 뽑기
+            </a>
+        </div>
+
+        <!-- 쓰리 카드 -->
+        <div class="spread-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+            <div class="flex items-start justify-between mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">쓰리 카드</h3>
+                    <p class="text-gray-600 mb-1">과거-현재-미래</p>
+                    <p class="text-sm text-gray-400">3장의 카드</p>
+                </div>
+                <span class="text-3xl">✨</span>
+            </div>
+            <a href="/draw?spread=three" class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl transition-all font-medium shadow-lg text-center">
+                카드 뽑기
+            </a>
+        </div>
+
+        <!-- 포 카드 -->
+        <div class="spread-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+            <div class="flex items-start justify-between mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">포 카드</h3>
+                    <p class="text-gray-600 mb-1">상황 분석</p>
+                    <p class="text-sm text-gray-400">4장의 카드</p>
+                </div>
+                <span class="text-3xl">✨</span>
+            </div>
+            <a href="/draw?spread=four" class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl transition-all font-medium shadow-lg text-center">
+                카드 뽑기
+            </a>
+        </div>
+
+        <!-- 십자가 -->
+        <div class="spread-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+            <div class="flex items-start justify-between mb-3">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">십자가</h3>
+                    <p class="text-gray-600 mb-1">종합 리딩</p>
+                    <p class="text-sm text-gray-400">5방향 리딩</p>
+                </div>
+                <span class="text-3xl">✨</span>
+            </div>
+            <a href="/draw?spread=cross" class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl transition-all font-medium shadow-lg text-center">
+                카드 뽑기
+            </a>
+        </div>
+
+        <!-- 켈틱 크로스 -->
+        <div class="spread-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+            <div class="flex items-start justify-between mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">켈틱 크로스</h3>
+                    <p class="text-gray-600 mb-1">종합 리딩</p>
+                    <p class="text-sm text-gray-400">10장의 카드</p>
+                </div>
+                <span class="text-3xl">✨</span>
+            </div>
+            <a href="/draw?spread=celtic" class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl transition-all font-medium shadow-lg text-center">
+                카드 뽑기
+            </a>
+        </div>
+
+        <!-- -->
+
+
+    </div>
+</div>
+{% endblock %}
